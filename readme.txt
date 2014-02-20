@@ -1,10 +1,10 @@
 === Gantry Export and Import Options ===
-Contributors: shazdeh
+Contributors: shazdeh, Updated by Peralta Design
 Plugin Name: Gantry Export and Import Options
 Tags: theme, gantry, gantry-theme-framework
 Requires at least: 3.3
-Tested up to: 3.3.1
-Stable tag: 0.2
+Tested up to: 3.8.1
+Stable tag: 0.3
 
 Export and Import options from your Gantry powered theme. Also supports Gantry overrides.
 

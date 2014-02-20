@@ -2,13 +2,17 @@
 /*
 Plugin Name: Gantry Export and Import Options
 Description: Export and Import options of your Gantry powered theme. Also supports Gantry overrides.
-Version: 0.2
-Author: Hassan Derakhshandeh
+Version: 0.3
+Author: Hassan Derakhshandeh & Peralta Design
 
 		* 	Copyright (C) 2011  Hassan Derakhshandeh
 		*	http://tween.ir/
 		*	hassan.derakhshandeh@gmail.com
-
+	
+		* 	Copyright (C) 2014  Peralta Design
+		*	http://www.peraltadesign.com
+		*	ramon@peraltadesign.com
+		
 		This program is free software; you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
 		the Free Software Foundation; either version 2 of the License, or
@@ -28,7 +32,20 @@ class Gantry_Export_Import_Options {
 
 	function Gantry_Export_Import_Options() {
 		add_action( "load-toplevel_page_gantry-theme-settings", array( &$this, 'actions' ) );
+		add_action('admin_head-toplevel_page_gantry-theme-settings', array( &$this, 'add_quick_tags' ) );
+		add_action('admin_head-toplevel_page_gantry-theme-settings', array( &$this, 'add_custom_styles' ) );
 		add_action( "admin_footer-toplevel_page_gantry-theme-settings", array( &$this, 'form' ) );
+	}
+	
+	function add_custom_styles(){
+
+		echo '<style type="text/css"> .custom-gantry-import-export-spacer {margin: 1em 2em;} </style>';
+	}
+	
+	function add_quick_tags(){
+
+		wp_enqueue_script('quicktags');
+
 	}
 
 	function form() {
